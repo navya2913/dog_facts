@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Dog Facts</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        button:hover {
+            background-color: #4cae4c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Click the button to get a fact!</h1>
+        <button id="factButton">Get Dog Fact</button>
+        <p id="factDisplay"></p>
+    </div>
+    <script>
+        const dogFacts = [
+            "Dogs can smell up to 100,000 times better than humans.",
+            "A dog's nose print is unique, like a human fingerprint.",
+            "Dogs can be trained to detect certain medical conditions in humans.",
+            "The average lifespan of a dog is between 10 and 13 years.",
+            "Dogs have three eyelids.",
+            "Dogs sweat through their paws.",
+            "The Basenji is the only dog that can't bark.",
+            "Puppies are born blind, deaf, and toothless.",
+            "Dogs can hear four times farther than humans.",
+            "The Labrador Retriever is the most popular dog breed in the world."
+        ];
+
+        document.getElementById('factButton').addEventListener('click', function() {
+            const randomIndex = Math.floor(Math.random() * dogFacts.length);
+            document.getElementById('factDisplay').textContent = dogFacts[randomIndex];
+        });
+    </script>
+</body>
+</html>
